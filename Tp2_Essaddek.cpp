@@ -1,4 +1,4 @@
-#include <iostream>      // utiliser count
+#include <iostream>      // pour les sorties et entrées
 #include <cmath>         // Fonctions mathématiques
 #include <cstdlib>		 // Pour utiliser rand()
 #include <vector>

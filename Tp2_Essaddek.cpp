@@ -13,7 +13,7 @@ float gamma(int n, float C, float beta)
 	return C/(pow(n+1,beta));
 }
 
-float F2(float x, float g){
+float F1(float x, float g){
 	float p=0.95;
 	if(g<=0){
 		return(1-p);
@@ -22,7 +22,7 @@ float F2(float x, float g){
 		return(-1*p);
 	}
 }
-float F1(float x, float g)
+float F2(float x, float g)
 {
     return x-g;
 }
@@ -82,7 +82,7 @@ void algorithme_rm2(float x0, int n, float C, float beta,float (*F)(float, float
 }
 	
 
-float F2(float x, float g)
+float F3(float x, float g)
 {
     if (g<=x) return 1-0.95;
 	return -0.95;
@@ -128,7 +128,7 @@ double max_vect(Vector G)
 double f(int m, Vector g, float r, float sigma, float T, float x, float K)
 {
 	int d = g.size();
-    float S_T[d];
+    	float S_T[d];
 	float res[d];
 	
 	for (int i = 0; i < d; i++) 
@@ -211,7 +211,7 @@ double approx_2_derivee_variance(Vector Lambda, float r, float sigma, float T, f
 
 
 	
-double F3(int n, double C, double beta, double g, double Lambda, float r, float sigma, float T, float x, float K)
+double F4(int n, double C, double beta, double g, double Lambda, float r, float sigma, float T, float x, float K)
 {
 	Vector G;
 	for (int i = 0;i < n; i++) G.push_back(gener_gauss());

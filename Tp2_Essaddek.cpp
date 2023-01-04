@@ -36,7 +36,7 @@ float gener_gauss()
 }
 
 
-void alogrithme_rm(float x0, int n, float C, float beta,float (*F)(float, float))
+void alogrithme_rm(float x0, int n, float C, float beta,float F(float, float))
 {
 	float X[n];
 	X[0] = x0;
@@ -60,7 +60,7 @@ void alogrithme_rm(float x0, int n, float C, float beta,float (*F)(float, float)
 
 
 
-void algorithme_rm2(float x0, int n, float C, float beta,float (*F)(float, float))
+void algorithme_rm2(float x0, int n, float C, float beta,float F(float, float))
 {
     double X[n];
 	double G[n];
@@ -226,7 +226,7 @@ double F3(double Lambda, double g, float r, float sigma, float T, float x, float
 	return (Lambda-g)*exp(-Lambda*g+Lambda*Lambda*0.5)*pow(f(0, G, r, sigma, T, x, K), 2);
 }
 
-void algorithme_rm_chen(double x_0, double MAX, int n, double C, double beta, float r, float sigma, float T, float x, float K,float (*F)(float, float))
+void algorithme_rm_chen(double x_0, double MAX, int n, double C, double beta, float r, float sigma, float T, float x, float K,float F(float, float))
 {
 	double X[n];
 	double G[n];
@@ -270,7 +270,7 @@ int main()
 		G[i] = gener_gauss();
 	}
 	
-	algorithme_rm(x0, n, C, beta,&F2);
+	algorithme_rm(x0, n, C, beta,F2);
 	
 	
 }
